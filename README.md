@@ -1,2 +1,6 @@
 # Harmon-AI
-Music Genre Classification/Speech Recognition/Lyrics Anlaysis...
+
+## Modules
+- Music Genre Classification
+- Speech Recognition
+- Lyrics Anlaysis
