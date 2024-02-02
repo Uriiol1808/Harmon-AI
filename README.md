@@ -1,6 +1,12 @@
 # Harmon-AI
 
+## Backend
+FastAPI
+
+## FrontEnd
+Vue.js
+
 ## Modules
 - Music Genre Classification
-- Speech Recognition
 - Lyrics Anlaysis
+- Speech Recognition
