@@ -13,35 +13,37 @@ Vue.js
 
 ## Folder Structure
 
-├── Music Genre/
-│   ├── backend/
-│   ├── frontend/
-│   ├── models/
-│   |   ├── weights.h5
-│   |   ├── architecture.json
-│   ├── databases/
-│   |   ├── database
-├── Lyric Analysis/
-│   ├── backend/
-│   ├── frontend/
-│   ├── models/
-│   |   ├── weights.h5
-│   |   ├── architecture.json
-│   ├── databases/
-│   |   ├── database
-├── Speech Recognition/
-│   ├── backend/
-│   ├── frontend/
-│   ├── models/
-│   |   ├── weights.h5
-│   |   ├── architecture.json
-│   ├── databases/
-│   |   ├── database 
-├── notebooks/   
-│   ├── music_genre_classification.ipynb
-│   ├── lyric_analysis.ipynb
-│   ├── speech_recognition.ipynb
-├── tests/
-├── docs/
-├── LICENSE
-└── README.md
+    .
+    ├── Music Genre/
+    │   ├── backend/
+    │   ├── frontend/
+    │   ├── models/
+    │   |   ├── weights.h5
+    │   |   ├── architecture.json
+    │   ├── databases/
+    │   |   ├── database
+    ├── Lyric Analysis/
+    │   ├── backend/
+    │   ├── frontend/
+    │   ├── models/
+    │   |   ├── weights.h5
+    │   |   ├── architecture.json
+    │   ├── databases/
+    │   |   ├── database
+    ├── Speech Recognition/
+    │   ├── backend/
+    │   ├── frontend/
+    │   ├── models/
+    │   |   ├── weights.h5
+    │   |   ├── architecture.json
+    │   ├── databases/
+    │   |   ├── database 
+    ├── notebooks/   
+    │   ├── music_genre_classification.ipynb
+    │   ├── lyric_analysis.ipynb
+    │   ├── speech_recognition.ipynb
+    ├── tests/
+    ├── docs/
+    ├── LICENSE
+    └── README.md
+
