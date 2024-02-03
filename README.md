@@ -5,18 +5,21 @@
     .
     ├── backend/
     │   ├── Music Genre/
+    │   │   ├── src/
     │   │   ├── models/
     │   │   |   ├── weights.h5
     │   │   |   ├── architecture.json
     │   │   ├── databases/
     │   │   |   ├── database
     │   ├── Lyric Analysis/
+    │   │   ├── src/
     │   │   ├── models/
     │   │   |   ├── weights.h5
     │   |   │   ├── architecture.json
     │   │   ├── databases/
     │   |   │   ├── database
-    │   ├── Speech Recognition/
+    │   ├── Speech Recognition
+    │   │   ├── src/
     │   │   ├── models/
     │   │   |   ├── weights.h5
     │   |   │   ├── architecture.json
