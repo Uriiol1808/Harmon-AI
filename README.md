@@ -5,7 +5,6 @@
     .
     ├── Music Genre/
     │   ├── backend/
-    │   ├── frontend/
     │   ├── models/
     │   |   ├── weights.h5
     │   |   ├── architecture.json
@@ -13,7 +12,6 @@
     │   |   ├── database
     ├── Lyric Analysis/
     │   ├── backend/
-    │   ├── frontend/
     │   ├── models/
     │   |   ├── weights.h5
     │   |   ├── architecture.json
@@ -21,12 +19,12 @@
     │   |   ├── database
     ├── Speech Recognition/
     │   ├── backend/
-    │   ├── frontend/
     │   ├── models/
     │   |   ├── weights.h5
     │   |   ├── architecture.json
     │   ├── databases/
     │   |   ├── database 
+    ├── frontend/
     ├── notebooks/   
     │   ├── music_genre_classification.ipynb
     │   ├── lyric_analysis.ipynb
@@ -40,7 +38,8 @@
 FastAPI
 
 ## FrontEnd
-Vue.js
+Vue.js --> Vue 3 version
+node.js --> 20.11.0 LTS
 
 ## Modules
 - Music Genre Classification
