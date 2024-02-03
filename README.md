@@ -3,27 +3,25 @@
 ## Folder Structure
 
     .
-    ├── Music Genre/
-    │   ├── backend/
-    │   ├── models/
-    │   |   ├── weights.h5
-    │   |   ├── architecture.json
-    │   ├── databases/
-    │   |   ├── database
-    ├── Lyric Analysis/
-    │   ├── backend/
-    │   ├── models/
-    │   |   ├── weights.h5
-    │   |   ├── architecture.json
-    │   ├── databases/
-    │   |   ├── database
-    ├── Speech Recognition/
-    │   ├── backend/
-    │   ├── models/
-    │   |   ├── weights.h5
-    │   |   ├── architecture.json
-    │   ├── databases/
-    │   |   ├── database 
+    ├── backend/
+    │   ├── Music Genre/
+    │   │   ├── models/
+    │   │   |   ├── weights.h5
+    │   │   |   ├── architecture.json
+    │   │   ├── databases/
+    │   │   |   ├── database
+    │   ├── Lyric Analysis/
+    │   │   ├── models/
+    │   │   |   ├── weights.h5
+    │   |   │   ├── architecture.json
+    │   │   ├── databases/
+    │   |   │   ├── database
+    │   ├── Speech Recognition/
+    │   │   ├── models/
+    │   │   |   ├── weights.h5
+    │   |   │   ├── architecture.json
+    │   │   ├── databases/
+    │   |   │   ├── database 
     ├── frontend/
     ├── notebooks/   
     │   ├── music_genre_classification.ipynb
