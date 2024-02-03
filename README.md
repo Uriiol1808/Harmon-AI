@@ -1,16 +1,5 @@
 # Harmon-AI
 
-## Backend
-FastAPI
-
-## FrontEnd
-Vue.js
-
-## Modules
-- Music Genre Classification
-- Lyrics Anlaysis
-- Speech Recognition
-
 ## Folder Structure
 
     .
@@ -47,3 +36,13 @@ Vue.js
     ├── LICENSE
     └── README.md
 
+## Backend
+FastAPI
+
+## FrontEnd
+Vue.js
+
+## Modules
+- Music Genre Classification
+- Lyrics Anlaysis
+- Speech Recognition
