@@ -26,6 +26,10 @@
     │   │   ├── databases/
     │   |   │   ├── database 
     ├── frontend/
+    │   │   ├── HomePage.vue
+    │   │   ├── MusicGenre/
+    │   │   ├── LyricAnalysis/
+    │   │   ├── SpeechRecognition/
     ├── notebooks/   
     │   ├── music_genre_classification.ipynb
     │   ├── lyric_analysis.ipynb
