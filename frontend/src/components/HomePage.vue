@@ -1,7 +1,13 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <input type="file" @change="handleFileUpload" />
+    <file-pond
+      ref="filePond"
+      v-if="showFilePond"
+      label-idle="Drop files here or click to upload"
+      @init="handleFilePondInit"
+      @addfile="handleFileUpload"
+    ></file-pond>
     <div class="buttons-container">
       <button @click="handleButtonClick('Music Genre')">Music Genre</button>
       <button @click="handleButtonClick('Lyric Analysis')">Lyric Analysis</button>
@@ -18,20 +24,34 @@
 </template>
 
 <script>
+import vueFilePond from 'vue-filepond';
+import 'filepond/dist/filepond.min.css';
+
 export default {
   name: 'HomePage',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      showFilePond: true
+    };
+  },
+  components: {
+    filePond: vueFilePond
   },
   methods: {
     handleButtonClick(buttonNumber) {
       // Send information to backend and process
       console.log(`Button ${buttonNumber} clicked!`);
     },
-    handleFileUpload(event) {
+    handleFileUpload(files) {
       // Get file and save it
-      const uploadedFile = event.target.files[0];
+      const uploadedFile = files[0].file;
       console.log('Uploaded File:', uploadedFile);
+
+      // Hide FilePond after uploading a file
+      this.showFilePond = false;
     }
   }
 }
