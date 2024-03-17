@@ -1,0 +1,1 @@
+Retrieve glove6B.100d.txt at: https://github.com/rohanrao619/Twitter_Sentiment_Analysis/blob/master/glove.6B.100d.txt
