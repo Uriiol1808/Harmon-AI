@@ -1,47 +1,74 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <v-app style="background-color: white;" >
+    <div class="button-container">
+      <v-btn color="primary" @click="showGenreComponent" class="genre_button">Genre Recognition</v-btn>
+      <v-btn color="primary" @click="showSentimentComponent" class="sentiment_button">Sentiment Classification</v-btn>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <div class="content">
+      <GenreRecognition v-if="showGenre" />
+      <SentimentClassification v-if="showSentiment" />
+    </div>
+  </v-app>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script>
+import GenreRecognition from './components/GenreRecognition.vue';
+import SentimentClassification from './components/SentimentClassification.vue';
+
+export default {
+  name: 'App',
+  components: {
+    GenreRecognition,
+    SentimentClassification
+  },
+  data() {
+    return {
+      showGenre: false,
+      showSentiment: false
+    };
+  },
+  methods: {
+    showGenreComponent() {
+      this.showGenre = true;
+      this.showSentiment = false;
+    },
+    showSentimentComponent() {
+      this.showGenre = false;
+      this.showSentiment = true;
+    }
+  }
+};
+</script>
+
+<style>
+#app {
+  text-align: center;
+}
+.container {
+  margin-top: 20px;
+}
+button {
+  margin: 0 10px;
+}
+.button-container {
+  position: fixed;
+  bottom: 50%;
+  left: 20%;
+  right: 20%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.left-button {
+  /* Adjust margin or padding if necessary */
+  margin-right: auto; /* Pushes the button to the left */
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.right-button {
+  /* Adjust margin or padding if necessary */
+  margin-left: auto; /* Pushes the button to the right */
+}
+.content {
+  margin-top: 20px;
 }
 </style>
