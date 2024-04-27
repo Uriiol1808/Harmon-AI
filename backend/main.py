@@ -38,3 +38,9 @@ async def sentiment_prediction(file: UploadFile = File(...)):
     prediction = SentimentProcessing.model_evaluation(token_vector)
     
     return JSONResponse(content={"prediction": prediction, "name": file.filename})
+
+@app.post("/genre-recognition/")
+async def genre_recognition(file: UploadFile = File(...)):
+
+    return JSONResponse(content={"prediction": "prediction", "name": file.filename})
+

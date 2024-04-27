@@ -21,7 +21,14 @@
         data() {
             return {
                 selectedFile: null,
-                fileFormData: null
+                fileFormData: null,
+                chart: null,
+                songName: "Hotel California", // Default song name
+                predictions: {
+                    rock: 0
+                    // ...
+                },
+                
             };
         },
         methods: {
@@ -30,18 +37,26 @@
                 this.fileFormData = new FormData();
                 this.fileFormData.append('file', this.selectedFile);
             },
-            submit() {
-                // Perform file upload here using this.fileFormData
-                // You can use Axios or any other HTTP client library to make the API request
-                // Example:
-                // axios.post('/api/upload', this.fileFormData)
-                //   .then(response => {
-                //     console.log(response.data);
-                //   })
-                //   .catch(error => {
-                //     console.error(error);
-                //   });
-            }
+            async submit() {
+                try {
+                    const response = await axios.post('http://localhost:8000/genre-recognition/', this.fileFormData, {
+                        headers: {
+                            'Content-Type': 'multipart/form-data'
+                        }
+                    });
+                    this.songName = response.data.name;
+                    this.predictions = response.data.predictions;
+
+                    // Update the chart title
+                    this.options.title.text = `${this.songName} Genre`
+
+                    // Update chart
+
+
+                } catch (error){
+                    console.error('There was an error during the file upload: ', error)
+                }
+            },
         }    
     };
 </script>
