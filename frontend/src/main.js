@@ -4,6 +4,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 import { createVuetify } from 'vuetify';
+import CanvasJSChart from '@canvasjs/vue-charts';
 import * as components from 'vuetify/components';
 import * as directives from 'vuetify/directives';
 import 'vuetify/styles'; // Ensure you are using css
@@ -17,7 +18,7 @@ const vuetify = createVuetify({
 
 const app = createApp(App);
 
-// Use Vuetify instance
 app.use(vuetify);
+app.use(CanvasJSChart);
 
 app.mount('#app');

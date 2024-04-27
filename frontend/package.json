@@ -4,11 +4,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 8080",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@canvasjs/vue-charts": "^1.0.4",
+    "axios": "^1.6.8",
+    "canvasjs": "^1.8.3",
     "vue": "^3.4.21",
     "vuetify": "^3.5.17"
   },
