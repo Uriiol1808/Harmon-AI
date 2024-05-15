@@ -1,20 +1,25 @@
 <template>
-    <div class="genre-recognition">
-      <h2 >Genre Recognition</h2>
-      <!-- Add your genre recognition UI elements here -->
-      <v-container>
-            <v-file-input
-                v-model="selectedFile"
-                label="Select a file"
-                show-size
-                @change="uploadFile"
-            ></v-file-input>
-            <v-btn @click="submit">Submit</v-btn>
-        </v-container>
+    <div class="main-container">
+        <div class="genre-recognition">
+            <h2>Genre Recognition</h2>
+            <v-container>
+                <v-file-input
+                    v-model="selectedFile"
+                    label="Select a file"
+                    show-size
+                    @change="uploadFile"
+                ></v-file-input>
+                <v-btn @click="submit">Submit</v-btn>
+            </v-container>
+        </div>
+        <div class="barchart-results">
+            <CanvasJSChart :options="chart"/>
+        </div>
     </div>
 </template>
   
 <script>
+    import axios from 'axios';
     export default {
         name: 'GenreRecognition',
         // Component logic goes here
@@ -66,9 +71,9 @@
                             { label: "Pop", y: 0 },
                             { label: "Reggae", y: 0 },
                             { label: "Rock", y: 0 },
-                        ];
-                    }];
-                };
+                        ]
+                    }]
+                }
             };
         },
         methods: {
@@ -85,10 +90,10 @@
                         }
                     });
                     this.songName = response.data.name;
-                    this.predictions = response.data.predictions;
+                    this.predictions = response.data.prediction;
 
                     // Update the chart title
-                    this.options.title.text = `${this.songName} Genre`;
+                    this.options.title.text = `${this.songName} genre`;
 
                     // Update chart
                     this.options.data[0].dataPoints = [
@@ -122,7 +127,7 @@
         padding: 20px;
     }
 
-    .sentiment-classification, .barchart-results {
+    .genre-recognition, .barchart-results {
         flex: 1;
         padding: 10px; /* Ensures padding inside the containers */
         box-sizing: border-box; /* Ensures padding is included in the width calculation */
