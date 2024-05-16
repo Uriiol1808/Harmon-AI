@@ -51,7 +51,7 @@ class SentimentProcessing:
         
     @staticmethod
     def model_evaluation(sequence):
-        model = load_model("models/sentiment_model.h5", custom_objects={
+        model = load_model("backend/LyricAnalysis/models/sentiment_model.h5", custom_objects={
             'f1_m': SentimentProcessing.f1_m,
             'precision_m': SentimentProcessing.precision_m, 
             'recall_m': SentimentProcessing.recall_m

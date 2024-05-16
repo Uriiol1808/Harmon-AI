@@ -1,13 +1,11 @@
-# import uvicorn
-
+import os
 from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel
-from typing import List, Optional, BinaryIO
+import librosa
 
-from .sentiment_processing import SentimentProcessing
-
+from .LyricAnalysis.src.sentiment_processing import SentimentProcessing
+from .GenreRecognition.src.genre_processing import GenreProcessing
 
 app = FastAPI()
 
@@ -42,5 +40,14 @@ async def sentiment_prediction(file: UploadFile = File(...)):
 @app.post("/genre-recognition/")
 async def genre_recognition(file: UploadFile = File(...)):
 
-    return JSONResponse(content={"prediction": "prediction", "name": file.filename})
+    # Read audio data
+    y, sr = librosa.load(file.file, offset=0, duration=30)
+
+    # Extract features
+    features = GenreProcessing.get_features(y, sr)
+
+    # Make the prediction
+    prediction = GenreProcessing.predict_genre(features)
+
+    return JSONResponse(content={"prediction": prediction, "name": file.filename})
 

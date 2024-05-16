@@ -129,8 +129,8 @@
 
     .genre-recognition, .barchart-results {
         flex: 1;
-        padding: 10px; /* Ensures padding inside the containers */
-        box-sizing: border-box; /* Ensures padding is included in the width calculation */
+        padding: 10px; 
+        box-sizing: border-box;
     }
 
     @media (max-width: 800px) {
